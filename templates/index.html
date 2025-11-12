@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Local Chat - Login</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="navbar"><h2>Local Chat</h2></div>
+  <div style="text-align:center; padding:50px;">
+    <h3>Enter your name to join Local Chat</h3>
+    <input id="username" placeholder="Your name">
+    <button onclick="addUser()">Join</button>
+  </div>
+  <script>
+    function addUser() {
+      const username = document.getElementById('username').value;
+      fetch('/add_user', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username })
+      })
+      .then(() => window.location.href = `/chat/${username}`);
+    }
+  </script>
+</body>
+</html>
