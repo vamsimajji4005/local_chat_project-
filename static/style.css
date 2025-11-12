@@ -1,0 +1,184 @@
+/* ===== GENERAL ===== */
+body {
+  background: #e5ddd5;
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background: #075e54;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h3 {
+  margin: 0;
+}
+
+.navbar button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.navbar button:hover {
+  opacity: 0.7;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  display: flex;
+  height: calc(100vh - 60px);
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  width: 30%;
+  background: #fff;
+  border-right: 1px solid #ddd;
+  overflow-y: auto;
+}
+
+.sidebar-header {
+  background: #128c7e;
+  color: white;
+  padding: 15px;
+  font-weight: bold;
+}
+
+.friend {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.friend:hover {
+  background: #f1f1f1;
+}
+
+.friend img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+/* ===== CHAT AREA ===== */
+.chat-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #efeae2;
+}
+
+.chat-header {
+  padding: 10px 15px;
+  background: #ededed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+}
+
+.chat-header h4 {
+  margin: 0;
+  font-weight: 600;
+}
+
+.messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  scroll-behavior: smooth;
+}
+
+.msg {
+  padding: 10px 15px;
+  border-radius: 15px;
+  max-width: 70%;
+  animation: fadeIn 0.4s ease;
+}
+
+.msg.sent {
+  background: #dcf8c6;
+  align-self: flex-end;
+}
+
+.msg.received {
+  background: #fff;
+  align-self: flex-start;
+}
+
+/* ===== INPUT AREA ===== */
+.input-area {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: #f0f0f0;
+}
+
+.input-area input {
+  flex: 1;
+  border: none;
+  padding: 12px 15px;
+  border-radius: 25px;
+  outline: none;
+  background: white;
+}
+
+.input-area button {
+  background: #075e54;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.input-area button:hover {
+  background: #0a7a65;
+}
+
+/* ===== QR MODAL ===== */
+.qr-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.qr-modal img {
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
+  background: white;
+  padding: 15px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
